@@ -35,8 +35,14 @@ export class PokemonService {
     }
   }
 
-  async findAll() {
-    const pokemons = await this.pokemonModel.find();
+  async findAll(paginationDto) {
+    const {limit = 10 , offset = 0} =paginationDto
+    const pokemons = await this.pokemonModel.find()
+        .limit(limit)
+        .skip(offset)
+        .sort({
+          no:1
+        });
     return pokemons;
   }
 
