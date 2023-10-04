@@ -8,8 +8,8 @@ export class SeedController {
 
   @Get()
   excecuteSeed() {
-    return this.seedService.executeSeed()
+     return this.seedService.executeSeed()
   }
 
 
-}
+} 

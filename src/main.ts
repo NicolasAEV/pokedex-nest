@@ -18,6 +18,8 @@ async function bootstrap() {
     })
   );
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
+  console.log('servidor encendido en el puerto: ' + process.env.PORT)
+  //   await app.listen(process.env.PORT);
 }
 bootstrap();
